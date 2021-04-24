@@ -4,17 +4,23 @@ def compairTest(a, b):
     else:
         return False
 import random
-sizeArray = input('how big of array to test?:')
+while True:
+    try:
+        sizeArray = int(input('how big of array to test?:'))
+        break
+    except:
+        print("integers only please")
+
 testArray = []
 for number in range(int(sizeArray)):
     testArray.append(int(number)+1)
 
 print(testArray)
 run = 1
-index = 0
 lengthArray= len(testArray)
 forFlag = True
 random.shuffle(testArray)
+print("we start with:" + str(testArray))
 while True:
     index = 0
     for number in testArray:
@@ -22,6 +28,7 @@ while True:
             random.shuffle(testArray)
             break
         index += 1
+
         if index == lengthArray-1:
             forFlag = False
             break
