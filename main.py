@@ -12,6 +12,8 @@ while True:
         print("integers only please")
 
 testArray = []
+runArray = []
+indexArray = []
 for number in range(int(sizeArray)):
     testArray.append(int(number)+1)
 
@@ -26,6 +28,8 @@ while True:
     for number in testArray:
         if compairTest(number,testArray[index+1])== False:
             random.shuffle(testArray)
+            indexArray.append(run)
+            runArray.append(index+1)
             break
         index += 1
 
@@ -34,6 +38,9 @@ while True:
             break
     if forFlag == False:
         break
+
     run+=1
 print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers')
 print('proof:' + str(testArray))
+print(indexArray)
+print(runArray)
