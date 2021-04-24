@@ -4,6 +4,7 @@ def compairTest(a, b):
     else:
         return False
 import random
+
 testArray = [1,2,3,4]
 run = 1
 index = 0
@@ -23,5 +24,5 @@ while True:
     if forFlag == False:
         break
     run+=1
-print(run)
-print(testArray)
+print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers')
+print('proof:' + str(testArray))
