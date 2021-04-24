@@ -3,21 +3,25 @@ def compairTest(a, b):
         return True
     else:
         return False
-
-testArray = [4,3,2,1,2]
+import random
+testArray = [1,2,3,4]
 run = 1
 index = 0
 lengthArray= len(testArray)
-flag = True
-while flag:
+forFlag = True
+random.shuffle(testArray)
+while True:
     index = 0
     for number in testArray:
-        print(number)
-        index += 1
-        if index == lengthArray-2:
-            print('break')
-            flag = False
+        if compairTest(number,testArray[index+1])== False:
+            random.shuffle(testArray)
             break
-    print('back to the start')
-
-print('breakworked')
+        index += 1
+        if index == lengthArray-1:
+            forFlag = False
+            break
+    if forFlag == False:
+        break
+    run+=1
+print(run)
+print(testArray)
