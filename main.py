@@ -4,8 +4,12 @@ def compairTest(a, b):
     else:
         return False
 import random
+sizeArray = input('how big of array to test?:')
+testArray = []
+for number in range(int(sizeArray)):
+    testArray.append(int(number)+1)
 
-testArray = [1,2,3,4]
+print(testArray)
 run = 1
 index = 0
 lengthArray= len(testArray)
