@@ -1,4 +1,4 @@
-import random, time, matplotlib
+import random, time
 
 import matplotlib.pyplot as plt
 
@@ -16,14 +16,14 @@ while True:
         print("integers only please")
 while True:
     '''i know this looks awful, i will fix it but i barely got some sleep last night'''
-        plotFlag = input('Do you want a graph? (Y/N):').upper()
-        if plotFlag == 'Y':
-            plotFlag = True
-            break
-        if plotFlag == ''
-            plotFlag = False
-            break
-        print('not valid selection!')
+    plotFlag = input('Do you want a graph? (Y/N):').upper()
+    if plotFlag == 'Y':
+       plotFlag = True
+       break
+    if plotFlag == 'N':
+       plotFlag = False
+       break
+    print('not valid selection!')
 
 
 testArray = []
@@ -67,7 +67,7 @@ while True:
 timeTotal= round(endTime - startTime, 5)
 print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers, this took ' + str(timeTotal) + ' seconds')
 print('proof:' + str(testArray))
-if plotFlag = True:
+if plotFlag == True:
     plt.title("Numbers in order against the Run", fontsize=20)
     plt.xlabel('Run Number', fontsize=10)
     plt.ylabel('Numbers in order', fontsize=10)
