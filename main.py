@@ -1,17 +1,30 @@
-import random, time
+import random, time, matplotlib
+
+import matplotlib.pyplot as plt
+
 
 def compairTest(a, b):
     if a < b:
         return True
     else:
         return False
-
 while True:
     try:
         sizeArray = int(input('how big of array to test?:'))
         break
     except:
         print("integers only please")
+while True:
+    '''i know this looks awful, i will fix it but i barely got some sleep last night'''
+        plotFlag = input('Do you want a graph? (Y/N):').upper()
+        if plotFlag == 'Y':
+            plotFlag = True
+            break
+        if plotFlag == ''
+            plotFlag = False
+            break
+        print('not valid selection!')
+
 
 testArray = []
 runArray = []
@@ -54,5 +67,11 @@ while True:
 timeTotal= round(endTime - startTime, 5)
 print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers, this took ' + str(timeTotal) + ' seconds')
 print('proof:' + str(testArray))
-#print(indexArray)
-#print(runArray)
+if plotFlag = True:
+    plt.title("Numbers in order against the Run", fontsize=20)
+    plt.xlabel('Run Number', fontsize=10)
+    plt.ylabel('Numbers in order', fontsize=10)
+    plt.scatter(indexArray, runArray, s=50)
+
+    plt.show()
+
