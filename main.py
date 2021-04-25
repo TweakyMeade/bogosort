@@ -1,9 +1,11 @@
+import random, time
+
 def compairTest(a, b):
     if a < b:
         return True
     else:
         return False
-import random
+
 while True:
     try:
         sizeArray = int(input('how big of array to test?:'))
@@ -23,6 +25,7 @@ lengthArray= len(testArray)
 forFlag = True
 random.shuffle(testArray)
 print("we start with:" + str(testArray))
+startTime = time.time()
 while True:
     index = 0
     for number in testArray:
@@ -34,13 +37,15 @@ while True:
         index += 1
 
         if index == lengthArray-1:
+            endTime = time.time()
             forFlag = False
             break
     if forFlag == False:
         break
 
     run+=1
-print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers')
+timeTotal= round(endTime - startTime, 5)
+print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers, this took ' + str(timeTotal) + ' seconds')
 print('proof:' + str(testArray))
-print(indexArray)
-print(runArray)
+#print(indexArray)
+#print(runArray)
