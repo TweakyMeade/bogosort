@@ -33,7 +33,7 @@ while True:
         if compairTest(number,testArray[index+1])== False:
             if index > bestOrder:
                 bestOrder = index
-                print("Our best run at run " + str(run) + " with " + str(bestOrder) + " numbers in order")
+                print("Our best run at run " + str(run) + " with " + str(bestOrder) + " numbers in order in " + str(round(time.time()-startTime, 5), ) + " secondss")
             random.shuffle(testArray)
             indexArray.append(run)
             runArray.append(index+1)
