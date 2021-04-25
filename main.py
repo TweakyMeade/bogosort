@@ -25,14 +25,20 @@ lengthArray= len(testArray)
 forFlag = True
 random.shuffle(testArray)
 print("we start with:" + str(testArray))
+bestOrder = 0
 startTime = time.time()
 while True:
     index = 0
     for number in testArray:
         if compairTest(number,testArray[index+1])== False:
+            if index > bestOrder:
+                bestOrder = index
+                print("Our best run at run " + str(run) + " with " + str(bestOrder) + " numbers in order")
             random.shuffle(testArray)
             indexArray.append(run)
             runArray.append(index+1)
+
+
             break
         index += 1
 
@@ -42,6 +48,7 @@ while True:
             break
     if forFlag == False:
         break
+
 
     run+=1
 timeTotal= round(endTime - startTime, 5)
