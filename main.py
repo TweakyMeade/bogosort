@@ -31,9 +31,9 @@ indexArray = []
 for number in range(int(sizeArray)):
     testArray.append(int(number)+1)
 
-print(testArray)
+print("Desired array:\n"+str(testArray))
 run = 1
-lengthArray= len("Desired array:\n"+str(testArray))
+lengthArray= len(testArray)
 forFlag = True
 random.shuffle(testArray)
 print("we start with:\n"  +str(testArray))
@@ -45,10 +45,10 @@ while True:
         if compairTest(number,testArray[index+1])== False:
             if index > bestOrder:
                 bestOrder = index
-                print("Our best run at run " + str(run) + " with " + str(bestOrder) + " numbers in order in " + str(round(time.time()-startTime, 5), ) + " secondss")
+                print("Our best run at run " + str(run) + " with " + str(bestOrder) + " numbers in order in " + str(round(time.time() - startTime, 5), ) + " secondss")
             random.shuffle(testArray)
             indexArray.append(run)
-            runArray.append(index+1)
+            runArray.append(index + 1)
 
 
             break
