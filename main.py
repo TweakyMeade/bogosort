@@ -19,7 +19,6 @@ def arraySizeCreator():
 
 def graphIt(x,y):
     while True:
-        '''i know this looks awful, i will fix it but i barely got some sleep last night'''
         flag = input('Do you want a graph? (Y/N):')
         if flag.upper() == 'Y':
             import matplotlib.pyplot as plt
@@ -42,8 +41,7 @@ def indexBreaker(a,b):
 
 def bestOrderFunc(a,b,c,d):
     if a > b:
-        print("Our best run at run " + str(d) + " with " + str(a) + " numbers in order in " + str(
-            timeTaken(c, time.time())) + " secondss")
+        print("Our best run at run " + str(d) + " with " + str(a) + " numbers in order in " + str(timeTaken(c, time.time())) + " secondss")
         return a
     return b
 
@@ -72,7 +70,7 @@ while indexBreaker(index,lengthArray) == False:
             index = 0
             break
         index += 1
-        if indexBreaker(index,lengthArray):
+        if indexBreaker(index,lengthArray): #right, i know this looks, the reason i'm breaking and also using fucntion for the while is because the for loop needs to complete before "while False" gets recognised form the interprater, Break exits the for loop to get back to the while.
             break
 
 print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers, this took ' + str(timeTaken(startTime,time.time())) + ' seconds')
