@@ -1,7 +1,7 @@
 import random, time
 
 def compairTest(a, b):
-    if a > b:
+    if a < b:
         return True
     else:
         return False
