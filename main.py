@@ -33,10 +33,10 @@ for number in range(int(sizeArray)):
 
 print(testArray)
 run = 1
-lengthArray= len(testArray)
+lengthArray= len("Desired array:\n"+str(testArray))
 forFlag = True
 random.shuffle(testArray)
-print("we start with:" + str(testArray))
+print("we start with:\n"  +str(testArray))
 bestOrder = 0
 startTime = time.time()
 while True:
