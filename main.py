@@ -16,11 +16,11 @@ while True:
         print("integers only please")
 while True:
     '''i know this looks awful, i will fix it but i barely got some sleep last night'''
-    plotFlag = input('Do you want a graph? (Y/N):').upper()
-    if plotFlag == 'Y':
+    plotFlag = input('Do you want a graph? (Y/N):')
+    if plotFlag.upper() == 'Y':
        plotFlag = True
        break
-    if plotFlag == 'N':
+    if plotFlag.upper() == 'N':
        plotFlag = False
        break
     print('not valid selection!')
