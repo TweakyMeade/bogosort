@@ -41,7 +41,7 @@ def indexBreaker(a,b):
 
 def bestOrderFunc(a,b,c,d):
     if a > b:
-        print("Our best run at run " + str(d) + " with " + str(a) + " numbers in order in " + str(timeTaken(c, time.time())) + " secondss")
+        print("Our best run at run " + str(d) + " with " + str(a) + " numbers in order in " + str(timeTaken(c, time.time())) + " seconds")
         return a
     return b
 
