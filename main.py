@@ -1,10 +1,7 @@
 import random, time
 
-def compairTest(a, b):
-    if a < b:
-        return True
-    else:
-        return False
+def compareTest(a, b):
+    return a < b
 
 def arraySizeCreator():
     while True:
@@ -55,14 +52,14 @@ run = 0
 lengthArray= len(testArray)
 forFlag = True
 random.shuffle(testArray)
-print("we start with:\n"  +str(testArray))
+print("we start with:\n"+str(testArray))
 bestOrder = 0
 startTime = time.time()
 index = 0
 while indexBreaker(index,lengthArray) == False:
     run+=1
     for number in testArray:
-        if compairTest(number,testArray[index+1])== False:
+        if compareTest(number, testArray[index + 1])== False:
             bestOrder=bestOrderFunc(index,bestOrder,startTime,run)
             random.shuffle(testArray)
             indexArray.append(run)
