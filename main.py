@@ -16,7 +16,9 @@ def arraySizeCreator():
             for number in range(int(sizeArray)):
                 array.append(int(number)+1)
             print("Desired array:\n" + str(array))
+            random.shuffle(array)
             print("we start with:\n" + str(array))
+
             return array
         except:
             print("integers only please")
@@ -75,4 +77,4 @@ while index != lengthArray-1:
 
 print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers, this took ' + str(timeTaken(startTime,time.time())) + ' seconds')
 print('proof:\n' + str(testArray))
-graphIt(indexArray, runArray)
+graphIt(runArray, indexArray)
