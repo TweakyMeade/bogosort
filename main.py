@@ -15,6 +15,8 @@ def arraySizeCreator():
             sizeArray = int(input('how big of array to test?:'))
             for number in range(int(sizeArray)):
                 array.append(int(number)+1)
+            print("Desired array:\n" + str(array))
+            print("we start with:\n" + str(array))
             return array
         except:
             print("integers only please")
@@ -49,20 +51,16 @@ def bestOrderFunc(a,b,c,d):
         return a
     return b
 
-runArray = []
 
 testArray = arraySizeCreator()
 
+runArray = []
 indexArray = []
-print("Desired array:\n"+str(testArray))
+bestOrder = 0
+index = 0
 run = 0
 lengthArray= len(testArray)
-forFlag = True
-random.shuffle(testArray)
-print("we start with:\n"+str(testArray))
-bestOrder = 0
 startTime = time.time()
-index = 0
 while index != lengthArray-1:
     run+=1
     runArray.append(run)
