@@ -1,7 +1,12 @@
 import random, time
 
-def compareTest(a, b):
-    return a < b
+def shufflerFunc(a, b, c, d, e):
+    if a > b:
+        random.shuffle(e)
+        d.append(c)
+        return True
+    else:
+        return False
 
 def arraySizeCreator():
     while True:
@@ -33,8 +38,10 @@ def graphIt(x,y):
 def timeTaken(a,b):
     return round(b - a, 5)
 
-def indexBreaker(a,b):
-    return a == b-1
+def indexBreaker(a,b,c):
+    if a == b-1:
+        c.append(b)
+        return True
 
 def bestOrderFunc(a,b,c,d):
     if a > b:
@@ -56,20 +63,18 @@ print("we start with:\n"+str(testArray))
 bestOrder = 0
 startTime = time.time()
 index = 0
-while indexBreaker(index,lengthArray) == False:
+while index != lengthArray-1:
     run+=1
+    runArray.append(run)
     for number in testArray:
-        if compareTest(number, testArray[index + 1])== False:
-            bestOrder=bestOrderFunc(index,bestOrder,startTime,run)
-            random.shuffle(testArray)
-            indexArray.append(run)
-            runArray.append(index + 1)
+        if shufflerFunc(number, testArray[index + 1], index, indexArray, testArray):
             index = 0
             break
-        index += 1
-        if indexBreaker(index,lengthArray): #right, i know this looks, the reason i'm breaking and also using fucntion for the while is because the for loop needs to complete before "while False" gets recognised form the interprater, Break exits the for loop to get back to the while.
+        bestOrder=bestOrderFunc(index,bestOrder,startTime,run)
+        index+=1
+        if indexBreaker(index,lengthArray,indexArray): #right, i know this looks, the reason i'm breaking and also using fucntion for the while is because the for loop needs to complete before "while False" gets recognised form the interprater, Break exits the for loop to get back to the while.
             break
 
 print('it took '+str(run)+' runs to sort 1 to ' + str(lengthArray) + ' using Random shuffles of the numbers, this took ' + str(timeTaken(startTime,time.time())) + ' seconds')
-print('proof:' + str(testArray))
+print('proof:\n' + str(testArray))
 graphIt(indexArray, runArray)
